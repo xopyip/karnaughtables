@@ -63,7 +63,7 @@ function App() {
         if (!table[SignalMove.DOWN(getRow(idx) * 4 + (getColumn(idx) + dx) % 4)]) can = false;
       if (can) h += 1;
     }
-    //if value above is also true then move start to the left and extend
+    //if value above is also true then move start to the row above and extend height
     if (h == 1) {
       let can = true;
       for (let dx = 0; dx < w; dx++)
