@@ -67,3 +67,11 @@ input{
 .karnaugh tr:first-of-type td:first-of-type {
   background-image: linear-gradient(to bottom left, transparent calc(50% - 1px), white, transparent calc(50% + 1px));
 }
+
+td[data-karnaugh] {
+  cursor: pointer;
+}
+
+td[data-karnaugh="true"] {
+  background: rgba(255, 255, 255, 0.2);
+}

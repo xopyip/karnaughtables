@@ -2,8 +2,6 @@ import React, {Component, KeyboardEvent, ReactNode} from 'react';
 
 type EquationInputProps = {
   updateEquation: Function,
-};
-type EquationInputState = {
   equation: string,
 };
 
@@ -17,13 +15,11 @@ function hasSelection(element: any): element is ISelectionInput {
   return (typeof element.selectionStart === "number") && (typeof element.value === "string");
 }
 
-class EquationInput extends Component<EquationInputProps, EquationInputState> {
+class EquationInput extends Component<EquationInputProps> {
   constructor(props: EquationInputProps) {
     super(props);
-    this.state = {
-      equation: "AB\u0305 + C\u0305A"
-    }
     this.keyDown = this.keyDown.bind(this);
+    props.updateEquation(props.equation);
   }
 
   keyDown(event: KeyboardEvent<HTMLInputElement>) {
@@ -56,7 +52,7 @@ class EquationInput extends Component<EquationInputProps, EquationInputState> {
     return (
       <div className={"equation"}>
         <div>
-          <span>Wzór sygnału:</span> <input type={"text"} value={this.state.equation} onKeyDown={this.keyDown}/>
+          <span>Wzór sygnału:</span> <input type={"text"} value={this.props.equation} onKeyDown={this.keyDown}/>
         </div>
         <div>
           <span className={"tip"}>lewy alt + sygnał = negacja sygnału</span>
