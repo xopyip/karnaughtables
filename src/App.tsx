@@ -119,6 +119,8 @@ function App() {
     <div className="App">
       <EquationInput updateEquation={updateEquation} equation={equation}/>
       <KarnaughTable tableStates={tableStates} updateTableStates={updateStatesTable}/>
+      <span className={"footer"}>Code: <a
+        href={"https://github.com/xopyip/karnaughtables"}>https://github.com/xopyip/karnaughtables</a></span>
     </div>
   );
 }

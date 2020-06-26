@@ -75,3 +75,12 @@ td[data-karnaugh] {
 td[data-karnaugh="true"] {
   background: rgba(255, 255, 255, 0.2);
 }
+
+span.footer {
+  margin-top: 50px;
+  color: #767676;
+}
+
+span.footer a {
+  color: #767676;
+}

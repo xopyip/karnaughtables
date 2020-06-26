@@ -93,7 +93,7 @@ const lookupColumnToSignal = function (columns: number[]) {
  */
 const lookupRowToSignal = function (rows: number[]) {
   if (rows.length === 4) {
-    return ""; //any combination of column signals
+    return ""; //any combination of row signals
   }
   if (rows.length === 2) {
     return ["D\u0305", "C", "D", "C\u0305"][Math.min(rows[0], rows[1])];
