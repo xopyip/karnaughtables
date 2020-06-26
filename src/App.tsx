@@ -21,7 +21,7 @@ function App() {
 
   let updateEquation = function (eq: string) {
     setEquation(eq);
-    let groups = equation.split("+").map(e => e.trim());
+    let groups = eq.split("+").map(e => e.trim());
     let table = Array.from(Array(16), (_) => false);
     for (let group of groups) {
       let groupTable = Array.from(Array(16), (_) => true);
