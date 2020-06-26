@@ -83,7 +83,7 @@ const lookupColumnToSignal = function (columns: number[]) {
     return ""; //any combination of column signals
   }
   if (columns.length === 2) {
-    return ["B\u0305", "A", "B", "A\u0305"][Math.min(columns[0], columns[1])];
+    return ["B\u0305", "A", "B", "A\u0305"][Math.abs(columns[0] - columns[1]) > 1 ? Math.max(columns[0], columns[1]) : Math.min(columns[0], columns[1])];
   }
   return ["A\u0305B\u0305", "AB\u0305", "AB", "A\u0305B"][columns[0]];
 }
@@ -96,7 +96,7 @@ const lookupRowToSignal = function (rows: number[]) {
     return ""; //any combination of row signals
   }
   if (rows.length === 2) {
-    return ["D\u0305", "C", "D", "C\u0305"][Math.min(rows[0], rows[1])];
+    return ["D\u0305", "C", "D", "C\u0305"][Math.abs(rows[0] - rows[1]) > 1 ? Math.max(rows[0], rows[1]) : Math.min(rows[0], rows[1])];
   }
   return ["C\u0305D\u0305", "CD\u0305", "CD", "C\u0305D"][rows[0]];
 }
